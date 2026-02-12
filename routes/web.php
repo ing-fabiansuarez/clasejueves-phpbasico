@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -11,11 +12,11 @@ Route::get('/mi-nombre', function () {
 });
 
 Route::get('/contactanos', function () {
-
     return view("form");
-   
 });
-
+Route::get('/store', function (Request $request) {
+    print_r($request->all());
+});
 
 
 
@@ -31,7 +32,7 @@ Route::get('/php-basico', function () {
 
 
     echo "<br><br><br> *************** ESTRUCTURAS DE CONTROL ********************* <br><br>";
-    $message = "Soy $name, tengo $age años. ". valadateAge($age);
+    $message = "Soy $name, tengo $age años. " . valadateAge($age);
     $message .= $isLogin ? " Estoy logueado" : " No estoy logueado";
     echo $message;
 
@@ -40,28 +41,28 @@ Route::get('/php-basico', function () {
     $pc = [
         "name" => "pc Gamer core9",
         "price" => 6000,
-        "marca" => "Lenovo" 
+        "marca" => "Lenovo"
     ];
 
     $teclado = [
         "name" => "Teclado",
         "price" => 200,
-        "marca" => "Asus" 
+        "marca" => "Asus"
     ];
 
     $listaProductos = [$pc, $teclado];
 
-    foreach ($listaProductos as $item){
+    foreach ($listaProductos as $item) {
         echo $item['name'] . "<br>";
     }
-
 });
 
 
-function valadateAge($age) {
-    if ($age >= 18 ){
-       return " Soy mayor de edad.";
-    }else{
-       return " Soy menor de edad.";
+function valadateAge($age)
+{
+    if ($age >= 18) {
+        return " Soy mayor de edad.";
+    } else {
+        return " Soy menor de edad.";
     }
 }

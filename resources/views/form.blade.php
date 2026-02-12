@@ -117,10 +117,8 @@
     <div class="container">
         <h1>Contáctanos</h1>
         <p class="subtitle">Completa el formulario y te responderemos pronto</p>
-        
-        
 
-        <form >
+        <form action="/store" method="GET" >
             <div class="form-group">
                 <label for="email">Correo electrónico *</label>
                 <input 
