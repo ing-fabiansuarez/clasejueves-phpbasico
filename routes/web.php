@@ -10,6 +10,15 @@ Route::get('/mi-nombre', function () {
     return "FABIAN ENRIQUE SUAREZ";
 });
 
+Route::get('/contactanos', function () {
+
+    return view("form");
+   
+});
+
+
+
+
 Route::get('/php-basico', function () {
 
     echo "<h1 style= 'color:red;'> Aprendiendo PHP </h1>";
